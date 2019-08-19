@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <ui:composition template="/templates/main.xhtml">
+        <ui:define name="content">
+            <h:form>
+            <h:commandLink
+                value="Registrar nueva cuenta"
+                class="btn btn-primary"
+                action="/register"/>    
+            
+            <h:commandLink
+                value="Regresar"
+                class="btn btn-danger"
+                action="/index?faces-redirect=true"/>    
+            
+            <!--proceder a listar a los usuarios con rol normal_user-->
+            <h:dataTable
+                id="admins"
+                class="table"
+                value="#{normalUserListBean.accounts}"
+                var="a">
+                
+                <h:column>
+                    <f:facet name="header">Usuario</f:facet>
+                    <h:outputText value="#{a.nickname}"/>
+                </h:column>
+                
+                
+                <h:column>
+                    <f:facet name="header">Nombres</f:facet>
+                    <h:outputText value="#{a.firstName}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">Apellidos</f:facet>
+                    <h:outputText value="#{a.lastName}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">Email</f:facet>
+                    <h:outputText value="#{a.email}"/>
+                </h:column>
+                
+                
+            
+            </h:dataTable>
+            
+            </h:form>
+            
+            
+        </ui:define>
+    </ui:composition>
+</html>
+

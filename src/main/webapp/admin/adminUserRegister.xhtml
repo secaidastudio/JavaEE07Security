@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+
+    <ui:composition template="/templates/main.xhtml">
+
+        <ui:define name="title">Registro de administrador</ui:define>
+
+        <ui:define name="content">
+            <h:form>
+            <h:panelGrid columns="2" class="table table-borderless">
+                <h:outputText value="Email:"/>
+                <h:inputText value="#{registerAdminBean.tempEmail}" class="w-100"/>
+                
+                <h:outputText value="Usuario:"/>
+                <h:inputText value="#{registerAdminBean.tempNickname}" class="w-100"/>
+                
+                <h:outputText value="Nombres:"/>
+                <h:inputText value="#{registerAdminBean.tempFirstName}" class="w-100"/>
+                
+                <h:outputText value="Apellidos:"/>
+                <h:inputText value="#{registerAdminBean.tempLastName}" class="w-100"/>
+                
+                <h:outputText value="Contraseña:"/>
+                <h:inputText value="#{registerAdminBean.tempPassword}" class="w-100"/>
+                
+            </h:panelGrid>
+                <h:commandButton value="Enviar" action="#{registerAdminBean.register()}"/>
+            </h:form>
+            
+        </ui:define>
+
+    </ui:composition>
+
+</html>

@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+
+    <ui:composition template="templates/main.xhtml">
+
+        <ui:define name="title">Registro de usuario</ui:define>
+
+        <ui:define name="content">
+            <h:form>
+                <h:panelGrid columns="2" class="table table-borderless">
+                    <!-- Email del usuario -->
+                    <h:outputText value="Email:"/>
+                    <h:panelGroup layout="block">
+                        <h:inputText id="email" value="#{registerNormalUser.tempEmail}" class="w-100"/>
+                        <h:message for="email" style="color:red"/>
+                    </h:panelGroup>
+
+
+                    <!-- nickname -->
+                    <h:outputText value="Nombre de usuario:"/>
+                    <h:panelGroup layout="block">
+                        <h:inputText id="nickName" value="#{registerNormalUser.tempNickName}" class="w-100"/>
+                        <h:message for="nickName" style="color: red"/>
+                    </h:panelGroup>
+                    
+
+                    <!-- nombres del usuario -->
+                    
+                    <h:outputText value="Nombres:"/>
+                    <h:panelGroup layout="block">
+                        <h:inputText id="firstName" value="#{registerNormalUser.tempFirstName}" class="w-100"/>
+                        <h:message for="firstName" style="color: red"/>
+                    </h:panelGroup>
+                    
+
+                    <!-- apellidos del usuario-->
+                    <h:outputText value="Apellidos:"/>
+                    <h:panelGroup layout="block">
+                        <h:inputText id="lastName" value="#{registerNormalUser.tempLastName}" class="w-100"/>    
+                        <h:message for="lastName" style="color: red"/>
+                    </h:panelGroup>
+                    
+
+                    <!-- password -->
+                    <h:outputText value="Contraseña:"/>
+                    <h:panelGroup layout="block">
+                        <h:inputSecret id="password" value="#{registerNormalUser.tempPassword}" class="w-100"/>    
+                        <h:message for="password" style="color: red"/>
+                    </h:panelGroup>
+                    
+
+                   
+                    
+                </h:panelGrid>
+
+                <h:commandButton 
+                    value="Registrar" 
+                    class="btn btn-primary"
+                    action="#{registerNormalUser.register()}"/>
+
+            </h:form>
+        </ui:define>
+
+    </ui:composition>
+
+</html>
